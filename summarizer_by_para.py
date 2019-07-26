@@ -1,6 +1,6 @@
 import bs4 as bs
 import urllib.request
-from summary import summarizer
+from utils import summarizer
 
 scraped_data = urllib.request.urlopen('https://en.wikipedia.org/wiki/Artificial_intelligence')
 article = scraped_data.read()
@@ -16,7 +16,6 @@ for p in paragraphs:
 		article_text.append(p.text)
 		#print (p.text.encode("utf-8"))
 		#print(len(p.text))
-
 
 for para in article_text:
 	print(summarizer(para,2).encode("utf-8"))
